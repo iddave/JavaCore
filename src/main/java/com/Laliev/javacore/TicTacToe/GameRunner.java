@@ -9,28 +9,20 @@ public class GameRunner {
         String  p1Msg = "Игрок1 ставит Х, выберете номер ячейки: ",
                 p2Msg = "Игрок2 ставит O, выберете номер ячейки: ";
         while(!logic.IsGameOver()){
-            if(p1Turn){
+            if(p1Turn)
                 if(logic.MakeCorrectMove(p1Msg, 'X')){
                     p1Turn = false;
-                    if(logic.IsWin()){
-                        System.out.println("Игрок1(X) победил:");
-                        field.PrintField();
+                    if(logic.IsWin(1))
                         break;
-                    }
                 }
                 else continue;
-            }
-            else {
+            else
                 if (logic.MakeCorrectMove(p2Msg, 'O')) {
                     p1Turn = true;
-                    if (logic.IsWin()) {
-                        System.out.println("Игрок2(O) победил:");
-                        field.PrintField();
+                    if (logic.IsWin(2))
                         break;
-                    }
                 }
                 else continue;
-            }
             field.PrintField();
         }
         if(logic.draw)

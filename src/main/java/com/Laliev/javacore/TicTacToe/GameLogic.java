@@ -20,7 +20,7 @@ public class GameLogic {
 //    012
 //    345
 //    678
-    public boolean IsWin(){
+    public boolean IsWin(int p){
         char[] f = field.gameField;
         if(     (f[0] == f[1] && f[0]==f[2]) ||
                 (f[3] == f[4] && f[3]==f[5]) ||
@@ -31,6 +31,9 @@ public class GameLogic {
                 (f[0] == f[4] && f[0]==f[8]) ||
                 (f[2] == f[4] && f[2]==f[6]))
         {
+
+            System.out.format("Игрок%d победил:\n", p);
+            field.PrintField();
             draw=false;
             return true;
         }
