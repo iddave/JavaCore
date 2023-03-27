@@ -51,7 +51,7 @@ public class GameLogic {
     }
 
     private void printField(){
-        for(int i = 0; i<9; i+=3)
+        for(int i = 0; i<9; i += 3)
             System.out.format("%c%c%c\n", field.getVal(i), field.getVal(i+1), field.getVal(i+2));
     }
 }
