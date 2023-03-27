@@ -1,19 +1,12 @@
 package com.Laliev.javacore.TicTacToe;
 
 public class Field {
-    public char[] gameField;
+    private char[] gameField;
+    public final char s1 = 'X', s2 = 'O';
+
+    public char getVal(int pos){ return gameField[pos]; }
+    public void setVal(int pos, char sym){ gameField[pos] = sym; }
     Field(){
-        gameField = new char[9];
-        for(int i = 0; i<9; i++){
-            gameField[i] = (char)(i+1+'0');
-        }
-        PrintField();
+        gameField = new char[]{'1', '2', '3', '4', '5', '6', '7', '8', '9'};
     }
-
-    public void PrintField(){
-        for(int i = 0; i<9; i+=3)
-            System.out.format("%c%c%c\n", gameField[i], gameField[i+1], gameField[i+2]);
-    }
-
-
 }
